@@ -53,9 +53,9 @@ class CzechCampaignController extends Controller
         $trimmedNicknameSegments = explode("\r\n", mb_wordwrap('温柔的码农Bond超长名字超长名字超长名字超长名字超长名字', 12));
         $trimmedNickname = count($trimmedNicknameSegments) > 1 ? $trimmedNicknameSegments[0] . '...' : $trimmedNicknameSegments[0];
         $canvas->text($trimmedNickname, 200, 1015, function ($font) {
-            $font->file('fonts/Noto_Sans_SC/NotoSansSC-Regular.otf');
+            $font->file(storage_path('fonts/noto-sans-sc-all-500-normal.woff'));
             $font->size(50);
-            $font->color('#000');
+            $font->color('#444');
             $font->align('left');
         });
 
@@ -65,9 +65,9 @@ class CzechCampaignController extends Controller
         // 文本要手动打断，一行一行放上去
         for ($i = 0; $i < count($description); $i++) {
             $canvas->text($description[$i], 70, 1138 + $i * 75, function ($font) {
-                $font->file('fonts/Noto_Sans_SC/NotoSansSC-Regular.otf');
+                $font->file(storage_path('fonts/noto-sans-sc-all-500-normal.woff'));
                 $font->size(42);
-                $font->color('#000');
+                $font->color('#444');
                 $font->align('left');
             });
         }
@@ -88,7 +88,7 @@ class CzechCampaignController extends Controller
         // 文本要手动打断，一行一行放上去
         for ($i = 0; $i < count($description); $i++) {
             $canvas->text($description[$i], 70, ($canvasHeight - 120) + 60 * $i, function ($font) {
-                $font->file('fonts/Noto_Sans_SC/NotoSansSC-Bold.otf');
+                $font->file(storage_path('fonts/noto-sans-sc-all-700-normal.woff'));
                 $font->size(45);
                 $font->color('#fff');
                 $font->align('left');

@@ -30,6 +30,9 @@
 
     @yield('content')
 
+    <a class="github-fork-ribbon" href="https://github.com/dragon-trail-interactive/h5-poster-php"
+        data-ribbon="Find me on GitHub" title="Find me on GitHub">Find me on GitHub</a>
+
 </body>
 
 </html>

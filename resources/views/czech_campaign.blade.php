@@ -15,6 +15,7 @@
         body {
             width: 100%;
             height: 100%;
+            position: relative;
         }
 
         .poster-section {
@@ -25,6 +26,8 @@
         }
 
         .poster-card {
+            width: 500px;
+            height: 809px;
             position: relative;
         }
 
@@ -32,23 +35,38 @@
             margin-left: 10px;
         }
 
-        /* 因为要用伪元素放网格，这个就不放在 poster-card 内部区域啦，拉出去 */
         .card-title {
             font-size: 20px;
-            position: absolute;
-            margin-top: -40px;
+            padding-top: 6px;
+            padding-bottom: 1px;
+            display: inline-block;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image: linear-gradient(to right, #24c6dc, #514a9d);
         }
 
-        .card-image {
-            max-width: 100%;
-            max-height: 100%;
+        .poster-card + .poster-card .card-title {
+            background-image: linear-gradient(to right, #dd5e89, #f7bb97);
+        }
+
+        .card-figure {
+            width: 500px;
+            height: 809px;
             border-radius: 5px;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+            overflow: hidden;
+            box-shadow: 3px 5px 10px rgba(0, 0, 0, .3);
             position: relative;
+            aspect-ratio: 1000/1618;
+        }
+
+        .card-figure img {
+            width: 100%;
+            height: 100%;
         }
 
         /* 辅助网格 */
-        .poster-card:after {
+        .card-figure:after {
             pointer-events: none;
             content: '';
             display: block;
@@ -77,6 +95,7 @@
                 80px 80px,
                 80px 80px;
         }
+
     </style>
 @endsection
 
@@ -84,14 +103,16 @@
     <div class="poster-section">
         <div class="poster-card">
             <h2 class="card-title">UI 稿</h2>
-            <img class="card-image" src="/static/czech-campaign/ui-mockup.jpg">
+            <div class="card-figure">
+                <img src="/static/czech-campaign/ui-mockup.jpg">
+            </div>
         </div>
         <div class="poster-card">
             <h2 class="card-title">海报</h2>
-            <img class="card-image" src="{{ $img->encoded }}">
+            <div class="card-figure">
+                <img class="card-image" src="{{ $img->encoded }}">
+            </div>
+
         </div>
     </div>
-
-    <a class="github-fork-ribbon" href="https://github.com/dragon-trail-interactive/h5-poster-php"
-        data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 @endsection
