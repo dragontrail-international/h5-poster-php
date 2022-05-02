@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>用 PHP 生成 H5 活动海报图</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
-
+@section('styles')
     <style>
         * {
             margin: 0;
@@ -85,17 +77,10 @@
                 80px 80px,
                 80px 80px;
         }
-
-        /* github ribbon style */
-        .github-fork-ribbon:before {
-            background-color: #333;
-        }
-
     </style>
-</head>
+@endsection
 
-<body>
-
+@section('content')
     <div class="poster-section">
         <div class="poster-card">
             <h2 class="card-title">UI 稿</h2>
@@ -107,9 +92,6 @@
         </div>
     </div>
 
-    <a class="github-fork-ribbon" href="https://github.com/dragon-trail-interactive/h5-poster-php" data-ribbon="Fork me on GitHub"
-        title="Fork me on GitHub">Fork me on GitHub</a>
-
-</body>
-
-</html>
+    <a class="github-fork-ribbon" href="https://github.com/dragon-trail-interactive/h5-poster-php"
+        data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+@endsection
