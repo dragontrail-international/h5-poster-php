@@ -12,8 +12,7 @@
 
     <title>用 PHP 生成 H5 活动海报图</title>
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="stylesheet" href="/vendor/css/gh-fork-ribbon.min.css" />
     <style>
         /* github ribbon style */
         .github-fork-ribbon:before {
